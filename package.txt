@@ -1,0 +1,9 @@
+ssh username@ip:port
+
+ps -ef | grep $USERHOME|grep -v grep|awk '{pring $2}'|xargs kill -g
+rm -rf $USERHOME/tomcat/webapps/$APPNAME
+sleep $SEC
+cp $PACKAGE_WAR_HOME $USERHOME/tomcat/webapps
+cd bin
+source startup.sh
+
